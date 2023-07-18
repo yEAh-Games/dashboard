@@ -1,6 +1,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if page.exthead %}<!--Exthead-->{% else %}
     <meta name="description" content="{{page.description}}">
     <meta property="og:description" content="{{page.description}}" />
     <meta property="og:site_name" content="{{site.name.og}}" />
@@ -8,6 +10,7 @@
     <meta name="theme-color" content="#ff4747">
     <link rel="canonical" href="https://{{site.domain}}{{page.permalink}}">
     <title>{{page.title}} | {{site.name.title}}</title>
+    {% endif %}
 
     {% if site.login.required %}
     <script>
