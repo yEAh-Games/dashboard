@@ -65,7 +65,8 @@
                                 </svg>
                                 <span
                                     class="c2LzVf9SsdSEMBrRjNwS c8dCx6gnV43hTOLV6ks5 ezMFUVl744lvw6ht0lFe _JmTNv5EiHqK2A1jcQSf EbR_B0tHyczsKYnc0ktU qIT6vrYn0Fr1U3wlPXaS"
-                                    aria-current="page">{{page.shorttitle}}</span>
+                                    aria-current="page">{% if page.shorttitle %}{{page.shorttitle}}{% else %}{% assign permalink_parts = page.permalink | split: '/' %}
+                                    {% assign last_part = permalink_parts | last | slug %}{{last_part|remove:'/'|remove:'.html'}}{% endif %}</span>
                             </div>
                         </li>
                     </ol>
